@@ -109,6 +109,8 @@ def load_model(model_dir: str) -> Tuple[nn.Module, Dict, Dict, str]:
     cfg_path = os.path.join(model_dir, "config.yaml")
     model_path = os.path.join(model_dir, "model.ckpt")
 
+    print(model_dir)
+    print(attr_path,cfg_path)
     attr = pickle.load(open(attr_path, "rb"))
     config = yaml.safe_load(open(cfg_path, "r"))
     model = AdaInVC(config["model"]).to(device)
