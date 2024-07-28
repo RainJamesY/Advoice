@@ -2,9 +2,7 @@
 
 Content Security Course Project Source Code
 
-**Team Leader**: Chen Pinji
-
-**Team Members**: Yao Dongyu, Zhang Peiyan, Wan Yuning
+**Team Members**: Chen Pinji, Yao Dongyu, Zhang Peiyan, Wan Yuning
 
 ### Environment Setup
 
