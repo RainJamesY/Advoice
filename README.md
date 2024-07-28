@@ -1,18 +1,18 @@
-# 防御语音合成：基于对抗样本的主动防御手段
+# Advoice: Proactively Defend against AI-synthesized Fake Voices via Adversarial Attacks
 
-内容安全课程项目源码
+Content Security Course Project Source Code
 
-组长：陈品极
+**Team Leader**: Chen Pinji
 
-组员：姚栋宇 张培妍 万宇宁
+**Team Members**: Yao Dongyu, Zhang Peiyan, Wan Yuning
 
-### 环境配置
+### Environment Setup
 
-* Windows 10 + Anaconda + python3
+* Windows 10 + Anaconda + Python 3
 
-### 数据集
+### Dataset
 
-* 采用数据集来源于CSTR VCTK Corpu，完整数据集可在此处下载[here](https://datashare.ed.ac.uk/handle/10283/3443)，目录/3people下为部分测试数据集。
+* The dataset is sourced from the CSTR VCTK Corpus. The complete dataset can be downloaded [here](https://datashare.ed.ac.uk/handle/10283/3443). A subset for testing is available in the `/3people` directory.
 
 * ```
   Defended
@@ -21,9 +21,9 @@
      └─ p374
   ```
 
-### 目录介绍
+### Directory Overview
 
-在这里我们介绍我们的目录结构，以便您进行测试。
+Below is an overview of our directory structure to facilitate testing.
 
 ```
 Defended
@@ -43,18 +43,18 @@ Defended
 └─ attack_utils.py
 ```
 
-### 测试
+### Testing
 
-如果您想自己运行代码测试生成的防御语音效果，请运行 ./Web_attack.py 文件，并修改以下几点：
+To run code tests for generating defended voice samples, execute the `./Web_attack.py` file and adjust the following parameters:
 
-* output : 将其修改为您想保存结果文件的路径几名称，如：./result/output.wav，结果文件将存储至您当前目录下的 result 文件夹中，并命名为 output.wav
-* eps : 扰动大小，您可以尝试 0-1 以内的任何值来测试效果
-* n_iters : 迭代次数，您可以修改为任意值来测试效果，我们建议您使用1500
-* examples : 您可以修改其中音频路径，这将作为在 gradio 网页端时的测试用例，修改手册可见[here](https://www.gradio.app/guides)
+* **output**: Modify this to the path and name where you want to save the result file, e.g., `./result/output.wav`. The result file will be stored in the `result` folder under your current directory and named `output.wav`.
+* **eps**: Perturbation size; you can test any value between 0-1 for different effects.
+* **n_iters**: Number of iterations; you can set this to any value for testing purposes. We recommend using 1500.
+* **examples**: You can modify the audio paths here for testing on the Gradio web interface. The modification guide can be found [here](https://www.gradio.app/guides).
 
-如果您只想测试防御效果，请登录我们的网站进行防御测试：
+If you only want to test the defense effect, please visit our website for defense testing:
 
-* 在以下网站进行[防御语音生成](https://huggingface.co/spaces/petervavank/Advoice)：点击examples提供的语音样本进行测试，生成即为防御语音样本。（您也可以选用自己的语音样本进行测试）
-* 在以下网站进行[语音转换](https://huggingface.co/spaces/petervavank/VoiceConvertion)测试效果：点击examples提供的语音样本进行测试，其中提供音色的样本分别为防御前后的语音样本，对比语音转换结果，可以看到我们的防御效果（您也可以选用自己的语音样本进行测试）
+* Generate defended voice samples on this [Defense Voice Generation](https://huggingface.co/spaces/petervavank/Advoice) page: Click on the provided voice samples in examples to test, and the generated sample will be the defended voice sample (you can also use your own voice samples for testing).
+* Test the effect of voice conversion on this [Voice Conversion](https://huggingface.co/spaces/petervavank/VoiceConvertion) page: Click on the provided voice samples in examples to test. The provided samples include voice samples before and after the defense. Compare the voice conversion results to observe the defense effect (you can also use your own voice samples for testing).
 
-测试中出现任何问题，请联系peiyan_zhang@qq.com
+If you encounter any issues during testing, please contact peiyan_zhang@qq.com.
